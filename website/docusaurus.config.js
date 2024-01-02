@@ -21,7 +21,7 @@ const config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'nsvk13', // Usually your GitHub org/user name.
-  projectName: 'personalTips', // Usually your repo name.
+  projectName: 'personalBlog', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
