@@ -5,32 +5,23 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-
 jobs:
-  deploy:
-    name: Deploy to GitHub Pages
+  build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: website
+
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'  
-          cache: npm
+      - uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: npm ci
-      - name: Build website
-        run: npm run build  
+      - name: Build
+        run: cd website && npm install && npm run build
 
-      - name: Deploy to GitHub Pages
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          user_name: github-actions[bot]
-          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          token: ${{ secrets.GH_TOKEN }}
+          publish-dir: website/build
