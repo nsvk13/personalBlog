@@ -1,6 +1,6 @@
 ---
 slug: welcome
-title: Привет, Мир!
+title: Привет, Блог
 authors: nsvk13
 ---
 

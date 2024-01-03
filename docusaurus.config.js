@@ -12,16 +12,13 @@ const config = {
   tagline: 'Щепотка лени и безумия',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
   url: 'https://nsvk13.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/personalBlog',
+  trailingSlash: false,
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'nsvk13', // Usually your GitHub org/user name.
-  projectName: 'personalBlog', // Usually your repo name.
+  organizationName: 'nsvk13',
+  projectName: 'personalBlog', 
+  deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
